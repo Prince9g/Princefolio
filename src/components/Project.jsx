@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const Project = ({image, description, name}) => {
+const Project = ({image, description, name, livelink, repolink}) => {
   const [hovered, setHovered] = useState(false);
 
   return (
+    <div>
     <motion.div
-      className="relative w-80 h-72 overflow-hidden rounded-2xl"
+      className="relative w-80 md:w-96 h-72 overflow-hidden rounded-2xl"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image */}
       <motion.img
         src={image}
-        className="w-full h-full object-cover rounded-2xl"
+        className="w-full h-full object-stretch rounded-2xl"
         animate={{ filter: hovered ? "brightness(50%)" : "brightness(100%)" }}
         transition={{ duration: 0.3 }}
       />
@@ -29,10 +30,15 @@ const Project = ({image, description, name}) => {
       </motion.div>
 
       {/* Title (Always Visible) */}
-      <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-xl font-bold text-orange-400">
+      
+    </motion.div>
+    <div className="text-center text-xl font-bold text-orange-400">
         {name}
       </div>
-    </motion.div>
+    <div className="text-center text-xl font-semibold">
+      <a href={livelink} target="_blank">Live Link</a> <span> | </span> <a href={repolink} target="_blank">Repo Link</a>
+    </div>
+    </div>
   );
 };
 

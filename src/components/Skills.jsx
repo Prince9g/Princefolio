@@ -3,7 +3,7 @@ import { SiMongodb, SiJavascript, SiCplusplus, SiTailwindcss, SiExpress } from "
 
 export default function Skills() {
   return (
-    <div className=" mx-auto p-6  text-black rounded-2xl shadow-lg">
+    <div className=" mx-auto p-6  text-black rounded-2xl">
       <h2 className="text-3xl font-serif mb-6 text-center font-bold border-b-2">Technical Skills</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {/* Skill Items */}
