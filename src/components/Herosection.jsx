@@ -1,8 +1,18 @@
 import React from "react";
 import mypic from "../assets/mypic.png";
 import photogif from "../assets/photogif.gif";
+import { MdOutlineFileDownload } from "react-icons/md";
 // import bgImage from "../assets/herogif.gif";
 const Herosection = () => {
+  const handledownload = () => {
+    const resumeUrl = "/resume.pdf";
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "Prince_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
   return (
     <div className="flex flex-col justify-center m-2 p-2 md:m-10 md:p-10"
     >
@@ -82,8 +92,8 @@ const Herosection = () => {
 </a>
         </div>
           <div className="mt-3">
-            <button className="p-3 bg-red-400 rounded-full text-lg">
-              Get in Touch
+            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2" onClick={handledownload}>
+              My Resume <span><MdOutlineFileDownload /></span>
             </button>
           </div>
         </div>
@@ -169,8 +179,8 @@ const Herosection = () => {
 </a>
         </div>
           <div className="mt-3">
-            <button className="p-3 bg-red-400 rounded-full text-lg">
-              Get in Touch
+            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2" onClick={handledownload}>
+            My Resume <span><MdOutlineFileDownload /></span>
             </button>
           </div>
         </div>
