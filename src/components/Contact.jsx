@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import alien from "../assets/alien.gif";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { PulseLoader } from "react-spinners"; // Import new loader
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +12,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setLoading(true);
 
     emailjs
       .send(
@@ -28,19 +31,19 @@ const Contact = () => {
       )
       .then(
         (response) => {
-          console.log("Email sent successfully!", response);
-          setStatus("Message sent successfully!");
+          toast.success("Message sent successfully! 🎉");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
-          console.log("Failed to send email.", error);
-          setStatus("Failed to send message. Please try again.");
+          toast.error("Failed to send message. Please try again.");
         }
-      );
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
     <div>
+      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <h2 className="text-center text-3xl font-bold font-serif border-b-2 m-10">
         Get in Touch
       </h2>
@@ -52,10 +55,7 @@ const Contact = () => {
 
         {/* Contact form section */}
         <div className="m-4 md:m-0 md:flex md:items-center md:justify-center md:w-1/2">
-          <form
-            className="md:w-1/2 space-y-3"
-            onSubmit={handleSubmit}
-          >
+          <form className="md:w-1/2 space-y-3" onSubmit={handleSubmit}>
             <div className="text-lg w-full font-semibold">
               Name:
               <input
@@ -91,12 +91,18 @@ const Contact = () => {
             <div className="mt-2">
               <button
                 type="submit"
-                className="p-3 text-lg rounded-full w-full bg-red-400"
+                disabled={loading}
+                className={`p-3 text-lg rounded-full w-full bg-red-400 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Get in Touch
+                {loading ? (
+                  <PulseLoader color="white" size={10} />
+                ) : (
+                  "Get in Touch"
+                )}
               </button>
             </div>
-            {status && <p className="text-center mt-2">{status}</p>}
           </form>
         </div>
       </div>
