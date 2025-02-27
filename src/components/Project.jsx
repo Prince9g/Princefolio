@@ -14,7 +14,7 @@ const Project = ({image, description, name, livelink, repolink}) => {
       {/* Image */}
       <motion.img
         src={image}
-        className="w-full h-full object-stretch rounded-2xl"
+        className="w-full h-full object-cover rounded-2xl"
         animate={{ filter: hovered ? "brightness(50%)" : "brightness(100%)" }}
         transition={{ duration: 0.3 }}
       />
