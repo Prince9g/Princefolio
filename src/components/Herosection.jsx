@@ -26,11 +26,11 @@ const Herosection = () => {
             </div>
             <div>and I'm an Aspiring Software Developer</div>
           </div>
-          <div className="flex space-x-6 mt-2 mb-2">
+          <div className="flex space-x-6 mt-2 md:mt-4 mb-2 md:mb-4">
           <a href="https://www.linkedin.com/in/prince-sharma-a38a11254" target="_blank" className="text-gray-400 hover:text-gray-500">
   <span className="sr-only">LinkedIn</span>
   <svg
-    className="h-6 w-6"
+    className="h-6 w-6 md:h-8 md:w-8"
     fill="currentColor"
     viewBox="0 0 24 24"
     aria-hidden="true"
@@ -46,7 +46,7 @@ const Herosection = () => {
           <a href="https://www.instagram.com/prince_sharmaa.00/" target="_blank" className="text-gray-400 hover:text-gray-500">
   <span className="sr-only">Instagram</span>
   <svg
-    className="h-6 w-6"
+    className="h-6 w-6 md:h-8 md:w-8"
     fill="currentColor"
     viewBox="0 0 24 24"
     aria-hidden="true"
@@ -62,7 +62,7 @@ const Herosection = () => {
 <a href="https://x.com/Prince03112002" target="_blank" className="text-gray-400 hover:text-gray-500">
   <span className="sr-only">X (Twitter)</span>
   <svg
-    className="h-6 w-6"
+    className="h-6 w-6 md:h-8 md:w-8"
     fill="currentColor"
     viewBox="0 0 24 24"
     aria-hidden="true"
@@ -78,7 +78,7 @@ const Herosection = () => {
           <a href="https://wa.me/917417773844" target="_blank" className="text-gray-400 hover:text-gray-500">
   <span className="sr-only">WhatsApp</span>
   <svg
-    className="h-6 w-6"
+    className="h-6 w-6 md:h-8 md:w-8"
     fill="currentColor"
     viewBox="0 0 24 24"
     aria-hidden="true"
