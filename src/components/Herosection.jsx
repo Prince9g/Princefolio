@@ -2,7 +2,6 @@ import React from "react";
 import mypic from "../assets/mypic.png";
 import photogif from "../assets/photogif.gif";
 import { MdOutlineFileDownload } from "react-icons/md";
-// import bgImage from "../assets/herogif.gif";
 const Herosection = () => {
   const handledownload = () => {
     const resumeUrl = "/resume.pdf";
