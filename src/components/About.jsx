@@ -4,8 +4,8 @@ import contact from "../assets/contact.gif";
 const About = () => {
   return (
     <div className="m-4 p-4">
-      <h1 className="text-center text-3xl font-bold font-serif border-b-2">About Me</h1>
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <h1 className="text-center text-3xl font-bold font-serif border-b-2 dark:text-white md:mb-4">About Me</h1>
+      <div className="flex flex-col md:flex-row md:justify-between dark:text-white">
         {/* content  */}
         <div className="md:hidden">
         <p className="text-lg leading-relaxed">

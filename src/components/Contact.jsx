@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import alien from "../assets/alien.gif";
+import alien from "../assets/contacts.png";
+import contact from "../assets/alien.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { PulseLoader } from "react-spinners"; // Import new loader
+import { PulseLoader } from "react-spinners";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,24 @@ const Contact = () => {
     message: "",
   });
 
+  const [pic, setPic] = useState(
+    document.documentElement.classList.contains("dark") ? alien : contact
+  );
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setPic(isDark ? alien : contact);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,17 +42,17 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_evvvcqb", // Replace with your EmailJS Service ID
-        "template_a0mjiae", // Replace with your EmailJS Template ID
+        "service_evvvcqb",
+        "template_a0mjiae",
         formData,
-        "q6U-CxH_rSwXYf0yK" // Replace with your EmailJS Public Key
+        "q6U-CxH_rSwXYf0yK"
       )
       .then(
-        (response) => {
+        () => {
           toast.success("Message sent successfully! 🎉");
           setFormData({ name: "", email: "", message: "" });
         },
-        (error) => {
+        () => {
           toast.error("Failed to send message. Please try again.");
         }
       )
@@ -42,15 +60,19 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="dark:text-white">
       <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <h2 className="text-center text-3xl font-bold font-serif border-b-2 m-10">
         Get in Touch
       </h2>
-      <div className="md:flex">
+      <div className="md:flex md:items-center md:justify-between md:gap-4">
         {/* Image section */}
-        <div>
-          <img src={alien} alt="Alien GIF" />
+        <div className="md:flex md:items-center md:justify-center md:w-1/2">
+          <img
+            src={pic}
+            alt="Contact GIF"
+            className={`${pic === contact ? "" : "dark:md:h-[600px]"}`}
+          />
         </div>
 
         {/* Contact form section */}
@@ -64,7 +86,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="p-1 w-full border-2 rounded-lg"
+                className="p-1 w-full border-2 rounded-lg dark:bg-slate-200 text-black"
               />
             </div>
             <div className="text-lg w-full font-semibold">
@@ -75,7 +97,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="p-1 w-full border-2 rounded-lg"
+                className="p-1 w-full border-2 rounded-lg dark:bg-slate-200 text-black"
               />
             </div>
             <div className="text-lg w-full font-semibold">
@@ -85,7 +107,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="p-1 w-full border-2 rounded-lg"
+                className="p-1 w-full border-2 rounded-lg dark:bg-slate-200 text-black"
               />
             </div>
             <div className="mt-2">

@@ -11,7 +11,7 @@ import back from "./assets/back.gif";
 const App = () => {
   const {scrollYProgress} = useScroll();
   return (
-    <div className="relative">
+    <div className="relative dark:bg-slate-900">
       <motion.img className="hidden md:block absolute top-40 right-1/4 h-[500px] z-[-1] opacity-50" src={back} alt="background"/>
       {/* <motion.img className="md:hidden fixed top-0 left-1/4  h-[500px] z-[-1]" src={backg} alt="background"/> */}
       <Heading/>

@@ -2,6 +2,7 @@ import React from "react";
 import mypic from "../assets/mypic.png";
 import photogif from "../assets/photogif.gif";
 import { MdOutlineFileDownload } from "react-icons/md";
+import Toggler from "./Toggler";
 const Herosection = () => {
   const handledownload = () => {
     const resumeUrl = "/resume.pdf";
@@ -14,19 +15,20 @@ const Herosection = () => {
   }
   return (
     <div className="flex flex-col justify-center m-2 p-2 md:m-10 md:p-10"
-    >
+    > 
+      
       <div className="flex flex-col md:flex-row justify-evenly items-center gap-5 md:gap-0">
         {/* left  */}
         <div className="md:w-1/2 hidden md:block">
-          <div className="text-left text-3xl">
+          <div className="text-left text-3xl dark:text-white">
             <div className="">
               Hello! My name is
-              <span className="text-sky-500 font-serif"> Prince Sharma</span>
+              <span className="text-sky-500 dark:text-sky-300 font-serif"> Prince Sharma</span>
             </div>
             <div>and I'm an Aspiring Software Developer</div>
           </div>
           <div className="flex space-x-6 mt-2 md:mt-4 mb-2 md:mb-4">
-          <a href="https://www.linkedin.com/in/prince-sharma-a38a11254" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://www.linkedin.com/in/prince-sharma-a38a11254" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">LinkedIn</span>
   <svg
     className="h-6 w-6 md:h-8 md:w-8"
@@ -42,7 +44,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-          <a href="https://www.instagram.com/prince_sharmaa.00/" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://www.instagram.com/prince_sharmaa.00/" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">Instagram</span>
   <svg
     className="h-6 w-6 md:h-8 md:w-8"
@@ -58,7 +60,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-<a href="https://x.com/Prince03112002" target="_blank" className="text-gray-400 hover:text-gray-500">
+<a href="https://x.com/Prince03112002" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">X (Twitter)</span>
   <svg
     className="h-6 w-6 md:h-8 md:w-8"
@@ -74,7 +76,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-          <a href="https://wa.me/917417773844" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://wa.me/917417773844" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">WhatsApp</span>
   <svg
     className="h-6 w-6 md:h-8 md:w-8"
@@ -90,10 +92,11 @@ const Herosection = () => {
   </svg>
 </a>
         </div>
-          <div className="mt-3">
-            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2" onClick={handledownload}>
+          <div className="mt-3 flex items-center justify-center gap-5 md:justify-start">
+            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2 text-white" onClick={handledownload}>
               My Resume <span><MdOutlineFileDownload /></span>
             </button>
+            <Toggler/>
           </div>
         </div>
         {/* right  */}
@@ -106,14 +109,14 @@ const Herosection = () => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center  md:w-1/2 md:hidden">
-          <div className="text-center text-3xl">
-            <div className="text-sky-500 font-serif">
+          <div className="text-center text-3xl dark:text-white">
+            <div className="text-sky-500 dark:text-sky-300 font-serif">
                Prince Sharma
             </div>
             <div>"I'm a an Aspiring Software Developer"</div>
           </div>
           <div className="flex space-x-6 mt-2 mb-2">
-          <a href="https://www.linkedin.com/in/prince-sharma-a38a11254" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://www.linkedin.com/in/prince-sharma-a38a11254" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">LinkedIn</span>
   <svg
     className="h-6 w-6"
@@ -129,7 +132,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-          <a href="https://www.instagram.com/prince_sharmaa.00/" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://www.instagram.com/prince_sharmaa.00/" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">Instagram</span>
   <svg
     className="h-6 w-6"
@@ -145,7 +148,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-<a href="https://x.com/Prince03112002" target="_blank" className="text-gray-400 hover:text-gray-500">
+<a href="https://x.com/Prince03112002" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">X (Twitter)</span>
   <svg
     className="h-6 w-6"
@@ -161,7 +164,7 @@ const Herosection = () => {
   </svg>
 </a>
 
-          <a href="https://wa.me/917417773844" target="_blank" className="text-gray-400 hover:text-gray-500">
+          <a href="https://wa.me/917417773844" target="_blank" className="text-gray-400 dark:text-gray-200 hover:text-gray-500">
   <span className="sr-only">WhatsApp</span>
   <svg
     className="h-6 w-6"
@@ -177,10 +180,11 @@ const Herosection = () => {
   </svg>
 </a>
         </div>
-          <div className="mt-3">
-            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2" onClick={handledownload}>
+          <div className="mt-3 flex justify-center items-center gap-5">
+            <button className="p-3 bg-red-400 rounded-full text-lg flex items-center gap-2 text-white" onClick={handledownload}>
             My Resume <span><MdOutlineFileDownload /></span>
             </button>
+            <Toggler/>
           </div>
         </div>
       </div>

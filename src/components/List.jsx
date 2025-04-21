@@ -2,9 +2,19 @@ import ai from "../assets/ai.png";
 import chatapp from "../assets/chatapp.png";
 import tracku from "../assets/tracku.png";
 import tic from "../assets/tic.png";
+import focusmate from "../assets/focusmate.jpg";
 const List = [
         {
           id: 1,
+          title: "FocusMate",
+          description:
+            "FocusMate - FocusRooms is a full-stack web application designed to help users stay productive using the Pomodoro technique. It features real-time collaboration with video, audio, chat, and a shared countdown timer. Users can create or join focus rooms to work together, track their sessions, and stay motivated with minimal distractions.",
+            image:focusmate,
+            livelink:"https://focusmate-deploy.onrender.com/",
+            repolink:"https://github.com/Prince9g/FocusMate"
+        },
+        {
+          id: 2,
           title: "TrackU",
           description:
             "A personal finance management dashboard that integrates financial data from multiple apps into a single platform. Built with the MERN stack, it provides real-time insights, tracks expenses, and offers AI-driven financial suggestions.",
@@ -13,7 +23,7 @@ const List = [
             repolink:"https://github.com/Prince9g/TrackU-deploy"
         },
         {
-          id: 2,
+          id: 3,
           title: "Personal AI-assistant",
           description:
             "An interactive AI assistant powered by Gemini API, utilizing JavaScript Speech Recognition & Speech Synthesis APIs. It supports multiple languages and can perform smart tasks like opening YouTube, Google searches, and more via voice commands.",
@@ -22,7 +32,7 @@ const List = [
             repolink:"https://github.com/Prince9g/Virtual_Assitant"
         },
         {
-          id: 3,
+          id: 4,
           title: "Chat application",
           description:
             "A real-time chat platform built with React.js, Firebase Authentication, and Firestore Database. It provides seamless user authentication, secure message storage, and instant messaging capabilities with a modern UI.",
@@ -31,7 +41,7 @@ const List = [
             repolink:"https://github.com/Prince9g/Chat-App"
         },
         {
-          id: 4,
+          id: 5,
           title: "Tic-Tac-Toe",
           description:
             "A classic Tic-Tac-Toe game built using React.js with a smooth UI and interactive gameplay. Features include two-player mode, win tracking, and an intelligent game logic system for a great user experience.",
@@ -40,7 +50,7 @@ const List = [
             repolink:"https://github.com/Prince9g/Tic_Tac_Toe"
         },
         {
-          id: 5,
+          id: 6,
           title: "Todo List",
           description:
             "A full-stack task management app with create, update, and delete functionality. Uses MERN stack to store tasks in a database, ensuring persistent storage and real-time updates for better productivity management.",
