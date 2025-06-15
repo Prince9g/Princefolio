@@ -67,6 +67,15 @@ const List = [
             livelink:"https://github.com/Prince9g/to-do-list-with-DB",
             repolink:"https://github.com/Prince9g/to-do-list-with-DB"
         },
+        {
+          id: 8,
+          title: "Social Media App",
+          description:
+            "A full-stack social media application that allows users to create accounts, post updates, and interact with others. Built with the MERN stack, it features user authentication, real-time updates, and a responsive design for an engaging user experience.",
+            image:"https://media.newyorker.com/photos/6807fc25cad9dbcd907db314/16:9/w_2560%2Cc_limit/NewYorker_MetaAntitrust_extend2.jpg",
+            livelink:"https://mern-social-media-deploy.onrender.com/",
+            repolink:"https://github.com/Prince9g/Social-media-app"
+        }
         
       ];
 
