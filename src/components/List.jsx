@@ -14,6 +14,15 @@ const List = [
             repolink:"https://github.com/Prince9g/FocusMate"
         },
         {
+          id: 7,
+          title: "AI-Powered Resume Builder",
+          description:
+            "An AI-driven resume builder that generates personalized resumes based on user input. It uses natural language processing to analyze job descriptions and tailor resumes to match specific roles, enhancing job application success.",
+            image:"https://www.myperfectresume.com/wp-content/uploads/2025/02/ats-resume-checker-hero.png" || tracku,
+            livelink:"https://ai-powered-resume-builder-deploy.onrender.com/",
+            repolink:"https://github.com/Prince9g/AI-Resume-builder"
+        },
+        {
           id: 2,
           title: "TrackU",
           description:
